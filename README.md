@@ -19,7 +19,7 @@ Enter `column-card`. A card which takes other cards and display them in columns:
 | type | string | **Required** | `custom:column-card`
 | cards | list | **Required** | List of cards
 
-## Instalation
+## Installation
 
 1. Copy `column-card.js` to `<config directory>/www/column-card.js`
 2. Add `column-card` as a resource in `ui-lovelace.yaml`
