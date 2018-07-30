@@ -34,11 +34,3 @@ views:
               entities:
                 - ...
 ```
-
-
-Problems
---------
-The columns are supposed to readjust automatically when the window has been resized.
-While this does work, it's rather slow. It can take several seconds before the update happens.
-
-If you know more about javascript than me (i.e. anything at all, really) and think you can fix this; please help!

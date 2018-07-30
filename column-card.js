@@ -27,7 +27,7 @@ class ColumnCard extends HTMLElement {
     this.cols.setAttribute("id", "columns");
     this.shadowRoot.appendChild(this.cols);
 
-    this.columns = 1;
+    this.columns = 0;
     this._cards = [];
   }
 
@@ -54,7 +54,16 @@ class ColumnCard extends HTMLElement {
       return element;
     });
 
-    this._createColumns(config);
+    window.addEventListener('resize', (event) => {this._updateColumns()});
+    window.setTimeout((event) => {this._updateColumns()}, 10);
+  }
+
+  _updateColumns() {
+    let numcols = Math.max(1,Math.floor(this.cols.clientWidth/300));
+    if(numcols != this.columns) {
+      this.columns = numcols
+      this._createColumns();
+    }
   }
 
   _createColumns() {
@@ -112,11 +121,6 @@ class ColumnCard extends HTMLElement {
 
   set hass(hass) {
     // console.log(hass);
-    let numcols = Math.max(1,Math.floor(this.cols.clientWidth/300));
-    if(numcols != this.columns) {
-      this.columns = numcols
-      this._createColumns();
-    }
     this._cards.forEach(item => {
       item.hass = hass;
     });
