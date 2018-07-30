@@ -107,6 +107,8 @@ class ColumnCard extends HTMLElement {
       columns[getColumnIndex(cardSize)].push(el);
     });
 
+    this.columnEntityCount = columnEntityCount
+
     // Remove any empty columns
     columns = columns.filter(val => val.length > 0);
 
@@ -128,6 +130,7 @@ class ColumnCard extends HTMLElement {
 
   getCardSize() {
     return 1;
+    return Math.max(this.columnEntityCount);
   }
 }
 customElements.define('column-card', ColumnCard);
