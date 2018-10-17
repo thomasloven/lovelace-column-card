@@ -16,6 +16,9 @@ class ColumnCard extends HTMLElement {
         max-width: 500px;
         overflow-x: hidden;
       }
+      .column > *:first-child {
+        margin-top: 0;
+      }
       .column > * {
         display: block;
         margin: 4px 4px 8px;
@@ -129,7 +132,6 @@ class ColumnCard extends HTMLElement {
   }
 
   getCardSize() {
-    return 1;
     return Math.max(this.columnEntityCount);
   }
 }
