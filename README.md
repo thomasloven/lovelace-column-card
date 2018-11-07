@@ -1,3 +1,8 @@
+# THIS IS DEPRECATED
+# USE [layout card](https://github.com/thomasloven/lovelace-layout-card) INSTEAD
+
+---
+
 # column-card
 
 A lovelace card which contains other cards and display them as if they were not inside a card at all.
